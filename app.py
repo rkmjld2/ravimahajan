@@ -596,4 +596,5 @@ Answer in bullet points, be concise and cautious."""
 
             st.caption("These are general ideas only. Always see a doctor for real advice.")
 
->>>>>>> b176e258d9d5921724f6f433215c909d04f4b31b
+
+
