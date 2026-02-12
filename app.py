@@ -296,3 +296,18 @@ Answer in bullet points, be concise and cautious."""
                         st.error(f"Error generating recommendations: {str(e)}")
 
             st.caption("These are general ideas only. Always see a doctor for real advice.")
+
+with tab2:
+    st.markdown("""
+    ### How to use:
+    1. **Paste** blood test report (PDF/Excel/WhatsApp)
+    2. **Parse** → Edit values in table  
+    3. **Process** → AI analyzes + saves to TiDB
+    4. **Ask** questions about your results
+    5. **Download** Q&A session
+    
+    ### Your TiDB database receives:
+    ```sql
+    INSERT INTO blood_reports (timestamp, test_name, result, unit, ref_range, flag)
+    ```
+    """)
