@@ -299,15 +299,52 @@ Answer in bullet points, be concise and cautious."""
 
 with tab2:
     st.markdown("""
-    ### How to use:
-    1. **Paste** blood test report (PDF/Excel/WhatsApp)
-    2. **Parse** → Edit values in table  
-    3. **Process** → AI analyzes + saves to TiDB
-    4. **Ask** questions about your results
-    5. **Download** Q&A session
+    # 🚀 Complete User Guide
     
-    ### Your TiDB database receives:
-    ```sql
-    INSERT INTO blood_reports (timestamp, test_name, result, unit, ref_range, flag)
+    ## 📋 **Step-by-Step Workflow**
+    
+    ### **1. Upload OR Paste Report**
+    - 📁 **Upload files**: Drag & drop CSV, TXT, Excel (.xlsx/.xls)
+    - 📝 **Paste text**: Copy from PDF viewer → Ctrl+V
+    - **Best format**:
     ```
+    Test,Result,Unit,Reference Range,Flag
+    Hemoglobin,12.4,g/dL,13.0-17.0,L
+    Glucose,102,mg/dL,70-99,H
+    ```
+    
+    ### **2. Parse → Edit**
+    - Click **"🔍 Parse Table"**
+    - Edit results, flags (H=High, L=Low)
+    
+    ### **3. Process & Save**
+    - Click **"🚀 Process & Save to TiDB"**
+    - ✅ AI index built + data saved to YOUR database
+    
+    ### **4. Ask Questions**
+    ```
+    "Is glucose high?"
+    "Show abnormal tests" 
+    "Hemoglobin range?"
+    "All H/L flags?"
+    ```
+    
+    ## 💾 **Your TiDB Database**
+    ```sql
+    INSERT INTO blood_reports 
+    (timestamp, test_name, result, unit, ref_range, flag)
+    VALUES (...)
+    ```
+    
+    ## ⚠️ **AI Safety**
+    - ✅ Reports **ONLY** your data
+    - ✅ No disease diagnosis
+    - ✅ Values + flags + ranges only
+    
+    ## 🎯 **Pro Tips**
+    - Use **comma/tabs** for columns
+    - **Flag dropdown**: H, L, H*, L*, Abnormal
+    - **Download** chat history anytime
+    
+    **Made with ❤️ using Groq + LangChain + TiDB + Streamlit**
     """)
